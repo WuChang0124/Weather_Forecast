@@ -1,7 +1,7 @@
+import urllib
 import urllib.request as request
 import urllib.error as error
 import json
-import urllib
 
 class WeatherQuery:
     def __init__(self, api_key):
@@ -28,11 +28,19 @@ class WeatherQuery:
                         info = result['result']['realtime']['info']
                         direct = result['result']['realtime']['direct']
                         power = result['result']['realtime']['power']
-                        return f"{info}\n{temperature}\n{humidity}\n{direct}\n{power}"
+                        future_data = result['result']['future']
+                        future_weather_info = []
+                        for data in future_data[:5]:
+                            weather_info = [
+                                data['date'],
+                                data['weather'],
+                                data['temperature'],
+                                data['direct'],
+                            ]
+                            future_weather_info.append(weather_info)
+                        return f"{info}\n{temperature}\n{humidity}\n{direct}\n{power}\n{future_weather_info}"
                     else:
                         return f"请求失败: {result['error_code']} {result['reason']}"
-                    
-                        
                 except Exception as e:
                     return f"解析结果异常：{e}"
             else:

@@ -20,11 +20,19 @@ class MainWindow(QtWidgets.QDialog):
             QtWidgets.QMessageBox.warning(self, "错误", result)
         else:
             weather_info = result.split("\n")
-            for i in range(len(weather_info)):
+            for i in range(len(weather_info)-1):
                 item = QtWidgets.QTableWidgetItem(weather_info[i])
                 item.setTextAlignment(QtCore.Qt.AlignCenter)
                 self.ui.tableWidget.setItem(0, i, item)
 
+            future_weather_info = eval(weather_info[5])
+            self.ui.tableWidget_2.setRowCount(5)
+            for i in range(5):
+                for j in range(4):
+                    item = QtWidgets.QTableWidgetItem(future_weather_info[i][j])
+                    item.setTextAlignment(QtCore.Qt.AlignCenter)
+                    self.ui.tableWidget_2.setItem(i, j, item)
+                                 
 if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)
     window = MainWindow()

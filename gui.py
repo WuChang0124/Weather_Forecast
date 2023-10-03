@@ -30,11 +30,33 @@ class Ui_Dialog(object):
         self.tableWidget.setHorizontalHeaderItem(3, item)
         item = QtWidgets.QTableWidgetItem()
         self.tableWidget.setHorizontalHeaderItem(4, item)
+        self.tableWidget_2 = QtWidgets.QTableWidget(Dialog)
+        self.tableWidget_2.setGeometry(QtCore.QRect(100, 200, 621, 281))
+        self.tableWidget_2.setObjectName("tableWidget_2")
+        self.tableWidget_2.setColumnCount(4)
+        self.tableWidget_2.setRowCount(5)
+        item = QtWidgets.QTableWidgetItem()
+        self.tableWidget_2.setVerticalHeaderItem(0, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tableWidget_2.setVerticalHeaderItem(1, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tableWidget_2.setVerticalHeaderItem(2, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tableWidget_2.setVerticalHeaderItem(3, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tableWidget_2.setVerticalHeaderItem(4, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tableWidget_2.setHorizontalHeaderItem(0, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tableWidget_2.setHorizontalHeaderItem(1, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tableWidget_2.setHorizontalHeaderItem(2, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tableWidget_2.setHorizontalHeaderItem(3, item)
 
         self.retranslateUi(Dialog)
         QtCore.QMetaObject.connectSlotsByName(Dialog)
 
-    
     def retranslateUi(self, Dialog):
         _translate = QtCore.QCoreApplication.translate
         Dialog.setWindowTitle(_translate("Dialog", "Dialog"))
@@ -50,6 +72,14 @@ class Ui_Dialog(object):
         item.setText(_translate("Dialog", "实时风向"))
         item = self.tableWidget.horizontalHeaderItem(4)
         item.setText(_translate("Dialog", "实时湿度"))
+        item = self.tableWidget_2.horizontalHeaderItem(0)
+        item.setText(_translate("Dialog", "日期"))
+        item = self.tableWidget_2.horizontalHeaderItem(1)
+        item.setText(_translate("Dialog", "天气"))
+        item = self.tableWidget_2.horizontalHeaderItem(2)
+        item.setText(_translate("Dialog", "温度"))
+        item = self.tableWidget_2.horizontalHeaderItem(3)
+        item.setText(_translate("Dialog", "风向"))  
 
 
 
