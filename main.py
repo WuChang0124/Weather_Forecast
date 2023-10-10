@@ -8,9 +8,9 @@ class MainWindow(QtWidgets.QDialog):
         super().__init__()
         self.ui = Ui_Dialog()
         self.ui.setupUi(self)
-        self.ui.pushButton.clicked.connect(self.query_weather)
+        self.ui.pushButton.clicked.connect(self.handle_weather)
 
-    def query_weather(self):
+    def handle_weather(self):
         city = self.ui.lineEdit.text()
         api_key = "19f71c283421e05531f9f187a92c35ce"  
         weather_query = WeatherQuery(api_key)
